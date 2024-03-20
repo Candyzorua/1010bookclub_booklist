@@ -25,8 +25,10 @@ def generate_markdown_with_code_table(output_file, data):
         outfile.write("|-------|--------|\n")
 
         # Write each row of data
+        # for row in data:
+        #     outfile.write(f"| `{row['Title']}` | {row['Author']} |\n")
         for row in data:
-            outfile.write(f"| `{row['Title']}` | {row['Author']} |\n")
+            outfile.write(f"`{row['Title']}`\n")
             
 
 if __name__ == "__main__":

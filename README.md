@@ -1,7 +1,5 @@
 # Booklist
 
-| Title | Author |
-|-------|--------|
 `Beloved`
 `Brave New World`
 `Crime and Punishment`
