@@ -2,6 +2,7 @@ import argparse
 import csv
 
 OUTPUT_FILE_NAME = "README.md"
+BOOK_NAME_FIELDNAME = "ï»¿book_name" #ï»¿ is BOM
 
 """
 Parses csv file and sorts alphabetically by title
@@ -9,7 +10,7 @@ Parses csv file and sorts alphabetically by title
 def process_csv_file(file_path):
     with open(file_path, 'r') as file:
         reader = csv.DictReader(file)
-        data = sorted(reader, key=lambda row: row['Title'])
+        data = sorted(reader, key=lambda row: row[BOOK_NAME_FIELDNAME])
         return data
 
 """
@@ -20,11 +21,8 @@ def generate_markdown_with_code_table(output_file, data):
         # Write the Markdown header
         outfile.write("# Booklist\n\n")
         
-        # Write each row of data
-        # for row in data:
-        #     outfile.write(f"| `{row['Title']}` | {row['Author']} |\n")
         for row in data:
-            outfile.write(f"```\n{row['Title']}\n```\n")
+            outfile.write(f"```\n{row[BOOK_NAME_FIELDNAME]}\n```\n")
             
 
 if __name__ == "__main__":
