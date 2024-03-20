@@ -20,15 +20,11 @@ def generate_markdown_with_code_table(output_file, data):
         # Write the Markdown header
         outfile.write("# Booklist\n\n")
         
-        # Write the table header
-        outfile.write("| Title | Author |\n")
-        outfile.write("|-------|--------|\n")
-
         # Write each row of data
         # for row in data:
         #     outfile.write(f"| `{row['Title']}` | {row['Author']} |\n")
         for row in data:
-            outfile.write(f"`{row['Title']}`\n")
+            outfile.write(f"```{row['Title']}```\n")
             
 
 if __name__ == "__main__":
